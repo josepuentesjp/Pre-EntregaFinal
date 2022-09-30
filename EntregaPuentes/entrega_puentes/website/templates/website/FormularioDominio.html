@@ -1,0 +1,27 @@
+{% extends "website/padre.html" %}
+
+{% block page_tilte %} Formulario de registro - Dominios {% endblock %}
+
+{% block nav_bar %}
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'FormTask' %}">{% block bot4 %} REGISTRO TAREAS {% endblock %}</a>
+    </li>
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'Buscador' %}">{% block bot5 %} BUSCADOR {% endblock %}</a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block titulo %}
+Registro de los Dominios
+{% endblock %}
+
+{% block opcion_formulario %}
+    <center><h4>Formulario registro de Dominios</h4></center>
+    <br>
+    <form action="/website/DomainForm" method="POST"> {% csrf_token %}
+        <table align="center">
+            {{form1.as_table}}
+        </table>
+        <center><input type="submit" value="Enviar formulario" style="width: 20%; background: #04c70d; font-size: 20px; border: none; border-radius: 4px; padding: 4px; color: rgb(238, 238, 240); margin: 16px; font-size: 22px;"></center>
+    </form>
+{% endblock %}

@@ -1,0 +1,177 @@
+{% extends "website/padre.html" %}
+{% load static %}
+
+{% block page_tilte %} Página Inicial {% endblock %}
+
+{% block nav_bar %}
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">{% block bot1 %} OPCIONES {% endblock %}</a>
+    </li>
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">{% block bot2 %} ACERCA DE {% endblock %}</a>
+    </li>
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">{% block bot3 %} CONTACTO {% endblock %}</a>
+    </li>
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'FormTask' %}">{% block bot4 %} REGISTRO TAREAS {% endblock %}</a>
+    </li>
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'Buscador' %}">{% block bot5 %} BUSCADOR {% endblock %}</a>
+    </li>
+    </li>
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'WorkersList' %}">{% block bot6 %} LISTADO {% endblock %}</a>
+    </li>
+</ul>
+{% endblock %}
+
+
+{% block titulo %}
+Proyecto de catálogo       
+{% endblock %}
+
+{% block creador %} 
+<h3>Ing. José Puentes</h3> 
+{% endblock %}
+
+{% block opcion_formulario %}
+<div class="container">
+    <!-- Portfolio Section Heading-->
+    <div class="text-center">
+        <h2 class="page-section-heading text-secondary mb-0 d-inline-block">OPCIONES</h2>
+    </div>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+    <!-- Portfolio Grid Items-->
+    <div class="row justify-content-center">
+        <!-- Portfolio Items-->
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="{% static 'website/assets/img/portfolio/examen.png' %}" alt="Dominios"/>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                </div><img class="img-fluid" src="{% static 'website/assets/img/portfolio/estudio.png' %}" alt="Trabajadores"/>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block opciones_internas %}
+<div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal0Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Dominios</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <a title="Dominios" href="{% url 'FormDomain' %}"><img class="img-fluid rounded mb-5" src="{% static 'website/assets/img/portfolio/examen.png' %}"/></a>
+                            <p class="mb-5">En este apartado se registran los dominios trabajados</p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar ventana</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary mb-0">Trabajadores</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+                            <!-- Portfolio Modal - Image-->
+                                <a title="Dominios" href="{% url 'FormWorker' %}"><img class="img-fluid rounded mb-5" src="{% static 'website/assets/img/portfolio/estudio.png' %}" alt="Trabajadores"/></a>
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-5">En este apartado se registran y buscan los trabajadores</p>
+                            <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar ventana</button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block about %}
+<section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="container">
+        <!-- About Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading d-inline-block text-white">Acerca del proyecto</h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="text-center">
+            <div class="container center-h center-v">
+                <p class="pre-wrap lead">Esta página web esta pensada en el registro de categorías de venta del catálogo de productos, así como los trabajadores y las tareas que desempeña cada uno.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block contacto %}
+<section class="page-section" id="contact">
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <div class="text-center">
+            <h2 class="page-section-heading text-secondary d-inline-block mb-0">CONTACTO</h2>
+        </div>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Contact Section Content-->
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="icon-contact mb-3"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="text-muted">Phone</div>
+                    <div class="lead font-weight-bold">(223) 591-8580</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
+                    <div class="text-muted">Email</div><a class="lead font-weight-bold" href="mailto:josepuentesjp@gmail.com">josepuentesjp@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

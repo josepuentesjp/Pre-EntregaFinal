@@ -1,0 +1,46 @@
+{% extends "website/padre.html" %}
+
+{% block page_tilte %} Listado de trabajadores {% endblock %}
+
+{% block nav_bar %}
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'FormTask' %}">{% block bot4 %} REGISTRO TAREAS {% endblock %}</a>
+    </li>
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'Buscador' %}">{% block bot5 %} BUSCADOR {% endblock %}</a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block titulo %}
+Listado actual de trabajadores
+{% endblock %}
+
+{% block opcion_formulario %}
+<div class="container">
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <center>
+                    <tr style="color: blue">
+                        <th>NOMBRE DEL TRABAJADOR</th>
+                        <th>DOMINIO DEL TRABAJADOR</th>
+                        <th>CORREO DEL TRABAJADOR</th>
+                        <th>NÚMERO DE CONTACTO DEL TRABAJADOR</th>
+                    </tr>
+                    </center>
+                </thead>
+                <tbody>
+                    {% for trabajador in worker_name %}
+                    <tr style="color: green">
+                        <td>{{trabajador.worker_name}}</td>
+                        <td>{{trabajador.worker_domain}}</td>
+                        <td>{{trabajador.worker_email}}</td>
+                        <td>{{trabajador.worker_phone_number}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+{% endblock %}
+
+

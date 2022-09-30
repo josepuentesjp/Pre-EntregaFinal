@@ -1,0 +1,29 @@
+{% extends "website/padre.html" %}
+
+{% block page_tilte %} Datos del trabajador {% endblock %}
+
+{% block nav_bar %}
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'FormTask' %}">{% block bot4 %} REGISTRO TAREAS {% endblock %}</a>
+    </li>
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'Buscador' %}">{% block bot5 %} BUSCADOR {% endblock %}</a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block titulo %}
+<h2>Resultado de Búsqueda del trabajador</h2>
+{% endblock %}
+
+{% block opcion_formulario %}
+    <center> <h2>
+    {% for worker in Trabajador %}
+            <p>Nombre: {{worker.worker_name}}</p>
+            <p>Dominio: {{worker.worker_domain}}</p>
+            <p>Correo electrónico: {{worker.worker_email}}</p>
+            <p>Número de contacto: {{worker.worker_phone_number}}</p>
+    {% endfor %}
+            </h2>
+    </center>
+{% endblock %}
+
